@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+  <form action="/next-question/{{q}}" method='POST'>
+    <h1>{{survey.questions[q].question}}</h1>
+    {% for choice in survey.questions[q].choices %}
+    <label for="{{choice}}">{{choice}}
+      <input type="checkbox" name="{{choice}}">
+    </label>
+    {% endfor %}
+    <br>
+    <input type="submit" value="next" class="next"/>
+  </form>
+</section>
+
+{% endblock %}

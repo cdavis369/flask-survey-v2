@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+  <h2>Thank you for completing our survey!</h2>
+  <ul>
+    {% for i in range((answers)|length) %}
+    <p><b>"{{ questions[i].question }}"</b></p>
+    <p>{{ answers[i]}}
+    {% endfor %}
+  </ul>
+  <a href="/"><button>Take Again</button></a>
+</section>
+
+{% endblock %}

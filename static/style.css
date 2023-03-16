@@ -1,0 +1,14 @@
+section {
+  text-align: center;
+  margin: auto;
+  margin-top: 10rem;
+  font-size: larger;
+  width: 25rem;
+  justify-content: center;
+}
+
+a, button, .next {
+  margin-top: 1.5rem;
+  /* float: left; */
+  width: 5rem;
+}
