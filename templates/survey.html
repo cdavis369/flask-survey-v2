@@ -4,6 +4,9 @@
 
 <section>
   <form action="/next-question/{{q}}" method='POST'>
+    {% for msg in get_flashed_messages() %}
+    <p class="warning">{{msg}}</p>
+    {% endfor %}
     <h1>{{survey.questions[q].question}}</h1>
     {% for choice in survey.questions[q].choices %}
     <label for="{{choice}}">{{choice}}
