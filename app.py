@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash
 from flask_debugtoolbar import DebugToolbarExtension
 from surveys import satisfaction_survey
 
@@ -25,6 +25,7 @@ def survey(q):
     return redirect('/thanks')
   elif q != len(responses):
     q = len(responses)
+    flash("Questions must be answered in order")
   return render_template('survey.html', survey=SURVEY, q=q)
 
 @app.route('/next-question/<int:q>', methods=['POST'])
