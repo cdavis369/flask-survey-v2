@@ -12,3 +12,7 @@ a, button, .next {
   /* float: left; */
   width: 5rem;
 }
+
+.warning {
+  color: darkred;
+}
